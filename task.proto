@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package messages;
+
+option go_package = "./messages";
+
+message Task {
+    string name = 1;
+    string command = 2;
+    string cronExpression = 3;
+    string description = 4;
+    message User {
+        string username = 5;
+        string password = 6;
+    }
+    message Server {
+        string ip = 7;
+    }
+    User user = 9;
+    Server server = 10;
+    bool isRemote = 8;
+}
