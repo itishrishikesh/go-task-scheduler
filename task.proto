@@ -4,6 +4,10 @@ package messages;
 
 option go_package = "./messages";
 
+service TaskManager {
+    rpc ScheduleTask(Task) returns (Empty) {};
+}
+
 message Task {
     string name = 1;
     string command = 2;
@@ -20,3 +24,5 @@ message Task {
     Server server = 10;
     bool isRemote = 8;
 }
+
+message Empty {}
